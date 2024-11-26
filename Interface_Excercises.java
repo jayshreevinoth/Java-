@@ -22,5 +22,10 @@ public class Interface_Excercises {
         Demo obj = new Demo();
         obj.printFirst();
         obj.printSecond();
+        print(obj);
+    }
+
+    static void print(firstInterface first) {
+        first.printFirst();
     }
 }
