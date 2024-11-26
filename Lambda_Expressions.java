@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
+interface StringFunction {
+    String run(String str);
+}
+
 public class Lambda_Expressions {
     public static void main(String[] args) {
         ArrayList<Integer> num = new ArrayList<>();
@@ -25,5 +29,15 @@ public class Lambda_Expressions {
             System.out.println(n);
         });
         num.forEach(lamda);
+
+        StringFunction exclam = (s) -> (s) + '!';
+        StringFunction ques = (s) -> (s) + '?';
+        printFormat("Hello", exclam);
+        printFormat("Hello", ques);
+
+    }
+
+    public static void printFormat(String str, StringFunction f) {
+        System.out.println(f.run(str));
     }
 }
